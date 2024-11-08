@@ -1,0 +1,32 @@
+body{
+    background-color: #1a1a1a;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+header{
+    display: flex;
+    justify-content: end;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+.cards{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 90vw;
+    height: 90vh;
+    gap: 30px;
+}
+.card{
+    border: 1px #333333 solid;
+    background-color: #101010;
+    border-radius: 12px;
+}
+.addButton{
+    background-color: #00A300;
+    text-align: center;
+    color: white;
+    height: 44px;
+    width: 109px;
+    border-radius: 4px;
+    border: none;
+}
