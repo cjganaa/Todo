@@ -4,19 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./script.js"></script>
 </head>
 <body>
     <header>
-        <button class="addButton">Add task</button>
+        <button class="addButton" onclick="addForm()">Add task</button>
     </header>
 
+    <div class="black-background">
+        <div class="form">
+            <h2>Enter task</h2>
+            <input type="text" placeholder="Enter name">
+            <select name="status" id="add-status">
+                <option value="none" selected disabled hidden>Select status</option>
+                <option value="todo">To do</option>
+                <option value="inprogress">In progress</option>
+                <option value="done">Done</option>
+                <option value="blocked">Blocked</option>
+            </select>
+            <button class="submit-button">
+                Submit
+            </button>
+        </div>
+    </div>
+
     <div class="cards">
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
+        <div class="card">
+            <div class="card-head">
+                <div class="status">
+                    <div class="status-dot"></div>
+                    <h2>Todo</h2>
+                </div>
+                <div class="counter">
+                </div>
+            </div>
+            <div class="tasks" id="todo">
+                <div class="task">
+                    <div class="task-name"></div>
+                    <div class="buttons">
+                        <a onclick="">
+                            <div class="fa fa-pencil" style="font-size: 25px;"></div>
+                        </a>
+                        <a onclick="">
+                            <div class="fa fa-trash-o" style="font-size: 25px;"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-head">
+                <div class="status">
+                    <div class="status-dot" style="background-color: yellow;"></div>
+                    <h2>In progress</h2>
+                </div>
+                <div class="counter">
+                </div>
+            </div>
+            <div class="tasks" id="inprogress"></div>
+        </div>
+        <div class="card">
+            <div class="card-head">
+                <div class="status">
+                    <div class="status-dot" style="background-color: green;"></div>
+                    <h2>Done</h2>
+                </div>
+                <div class="counter">
+                </div>
+            </div>
+            <div class="tasks" id="done"></div>
+        </div>
+        <div class="card">
+            <div class="card-head">
+                <div class="status">
+                    <div class="status-dot" style="background-color: red;"></div>
+                    <h2>Blocked</h2>
+                </div>
+                <div class="counter">
+                </div>
+            </div>
+            <div class="tasks" id="blocked"></div>
+        </div>
     </div>
     
 </body>
-</html>
+</html> 
