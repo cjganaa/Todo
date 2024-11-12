@@ -18,18 +18,19 @@
 
     <div class="black-background">
         <div class="form">
-            <h2>Enter task</h2>
-            <input type="text" placeholder="Enter name">
-            <select name="status" id="add-status">
+            <h2 id="form-title"></h2>
+            <input type="text" placeholder="Enter name" id="name">
+            <select name="status" id="status">
                 <option value="none" selected disabled hidden>Select status</option>
                 <option value="todo">To do</option>
                 <option value="inprogress">In progress</option>
                 <option value="done">Done</option>
                 <option value="blocked">Blocked</option>
             </select>
-            <button class="submit-button">
-                Submit
-            </button>
+            <div id="submit">
+                <button class="submit-button" onclick="addTask()">Submit</button>
+            </div>
+            
         </div>
     </div>
 
@@ -43,19 +44,7 @@
                 <div class="counter">
                 </div>
             </div>
-            <div class="tasks" id="todo">
-                <div class="task">
-                    <div class="task-name"></div>
-                    <div class="buttons">
-                        <a onclick="">
-                            <div class="fa fa-pencil" style="font-size: 25px;"></div>
-                        </a>
-                        <a onclick="">
-                            <div class="fa fa-trash-o" style="font-size: 25px;"></div>
-                        </a>
-                    </div>
-                </div>
-            </div>
+            <div class="tasks" id="todo"></div>
         </div>
         <div class="card">
             <div class="card-head">
