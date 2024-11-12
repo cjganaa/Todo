@@ -18,7 +18,10 @@
 
     <div class="black-background">
         <div class="form">
-            <h2 id="form-title"></h2>
+            <div class="form-head">
+                <h2 id="form-title"></h2>
+                <button onclick="closeForm()" class="close-button">&times;</button>
+            </div>
             <input type="text" placeholder="Enter name" id="name">
             <select name="status" id="status">
                 <option value="none" selected disabled hidden>Select status</option>
@@ -41,8 +44,7 @@
                     <div class="status-dot"></div>
                     <h2>Todo</h2>
                 </div>
-                <div class="counter">
-                </div>
+                <div class="counter" id="todo-counter"></div>
             </div>
             <div class="tasks" id="todo"></div>
         </div>
@@ -52,7 +54,7 @@
                     <div class="status-dot" style="background-color: yellow;"></div>
                     <h2>In progress</h2>
                 </div>
-                <div class="counter">
+                <div class="counter" id="inprogress-counter">
                 </div>
             </div>
             <div class="tasks" id="inprogress"></div>
@@ -63,8 +65,7 @@
                     <div class="status-dot" style="background-color: green;"></div>
                     <h2>Done</h2>
                 </div>
-                <div class="counter">
-                </div>
+                <div class="counter" id="done-counter"></div>
             </div>
             <div class="tasks" id="done"></div>
         </div>
@@ -74,8 +75,7 @@
                     <div class="status-dot" style="background-color: red;"></div>
                     <h2>Blocked</h2>
                 </div>
-                <div class="counter">
-                </div>
+                <div class="counter" id="blocked-counter"></div>
             </div>
             <div class="tasks" id="blocked"></div>
         </div>

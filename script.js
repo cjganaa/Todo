@@ -19,22 +19,34 @@ function refresh(){
     let inprogress = '';
     let done = '';
     let blocked = '';
+    let todoCount = 0;
+    let inprogressCount = 0;
+    let doneCount = 0;
+    let blockedCount = 0;
     for(let i=0;i<tasks.length;i++){
         if(tasks[i].status == "todo"){
             todo += taskHTML(tasks[i].name,i);
+            todoCount++;
         }else if(tasks[i].status == "inprogress"){
             inprogress += taskHTML(tasks[i].name,i);
+            inprogressCount++;
         }else if(tasks[i].status == "done"){
             done += taskHTML(tasks[i].name,i);
+            doneCount++;
         }else if(tasks[i].status == "blocked"){
             blocked += taskHTML(tasks[i].name,i);
+            blockedCount++;
         }
     }
     document.getElementById("todo").innerHTML = todo;
     document.getElementById("inprogress").innerHTML = inprogress;
     document.getElementById("done").innerHTML = done;
     document.getElementById("blocked").innerHTML = blocked;
-    
+
+    document.getElementById("todo-counter").innerText = todoCount;
+    document.getElementById("inprogress-counter").innerText = inprogressCount;
+    document.getElementById("done-counter").innerText = doneCount;
+    document.getElementById("blocked-counter").innerText = blockedCount;
 }
 
 function addForm(){
@@ -79,4 +91,7 @@ function editTask(index){
 function deleteTask(index){
     tasks.splice(index,1);
     refresh();
+}
+function closeForm(){
+    document.querySelector(".black-background").style.display = "none";
 }
